@@ -1,0 +1,14 @@
+{
+  "profile": {
+    "name": "admin",
+    "password": "1234"
+  },
+  "categories": [
+   {
+      "id": "0",
+      "name": "Смартфоны"
+    } 
+  ]
+    
+  
+}
