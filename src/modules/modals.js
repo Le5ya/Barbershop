@@ -22,7 +22,7 @@ export const closeModal = (modal) => {
     
 
    setTimeout(() => {
-    modalclassList.remove('d-block')
+    modal.classList.remove('d-block')
     layout && layout.remove()
    }, 500)
 }

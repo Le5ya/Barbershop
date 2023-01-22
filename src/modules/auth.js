@@ -29,13 +29,13 @@ const cartModal = modal.querySelector('.cart-modal')
 const login = () => {
   authBtn.classList.add('d-none') 
   openCartBtn.classList.remove('d-none')
-  logoutBtn.style.classList.remove('d-none')
+  logoutBtn.classList.remove('d-none')
   closeModal(modal) 
 }
 const logout = () => {
   authBtn.classList.remove('d-none') 
   openCartBtn.classList.add('d-none')
-  logoutBtn.style.classList.add('d-none')
+  logoutBtn.classList.add('d-none')
 
 }
 
@@ -43,7 +43,7 @@ const checkAuth = () => {
   const user = JSON.parse(localStorage.getItem('auth'))
 
   if (user) {
-    getData('profile').then((data) => {
+    getData('/profile').then((data) => {
         if((data.login && data.login ===user.login) 
         && (data.password && data.password ===user.password)) {
             login()
@@ -64,9 +64,9 @@ closeBtns.forEach((btn) => {
     })
 })
 
-closeBtn.addEventListener('click', () => {
-    closeModal(modal);
-})
+// closeBtn.addEventListener('click', () => {
+//     closeModal(modal);
+// })
 loginBtn.addEventListener('click', () => {
     const loginInput = modal.querySelector('#login-control')
     const passwordInput = modal.querySelector('#password-control')
@@ -75,7 +75,7 @@ loginBtn.addEventListener('click', () => {
         login: loginInput.value,
         password: passwordInput.value
     }
-    getData('profile').then((data) => {
+    getData('/profile').then((data) => {
         if((data.login && data.login ===user.login) 
         && (data.password && data.password ===user.password)) {
             localStorage.setItem('auth', JSON.stringify(data))
