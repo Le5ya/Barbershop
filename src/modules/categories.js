@@ -2,7 +2,7 @@ import { getData} from './api'
 
 export const categoriesFunc = () => {
     const container = document.getElementById('categories-container')
-    const render = (data) => {
+     const render = (data) => {
         data.forEach((item) => {
             container.insertAdjacentHTML('beforeend', `
             <div class="col col-12 col-md-6 col-lg-4 mb-3">
@@ -16,7 +16,7 @@ export const categoriesFunc = () => {
             </a>
         </div>
             `)
-        })
+         })
     }
     getData('/categories')
     .then((data) => {

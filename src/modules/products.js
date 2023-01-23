@@ -1,10 +1,10 @@
-import { getData } from "./api"
+import { getData} from './api'
 
 export const productsFunc = () => {
     const container = document.getElementById('products-container')
-
     const render = (data) => {
         data.forEach((item) => {
+            // console.log(item);
             container.insertAdjacentHTML('beforeend', `
             <div class="col col-12 col-sm-6 col-lg-4 col-xl-3 mb-3">
                 <a href="#" class="card-link">
@@ -29,13 +29,11 @@ export const productsFunc = () => {
             `)
         })
     }
-    render()
    const init = () => {
-  const params = window.location.search
-  const urlSearchParams = new URLSearchParams(params)
-  const id = urlSearchParams.get('id')
-//   const url = id ? '/products?category=${id}' : '/products'
-console.log(id);
+        const params = window.location.search
+        const urlSearchParams = new URLSearchParams(params)
+        const id = urlSearchParams.get('id')
+        const url = id ? `/products?category=${id}` : `/products`
  
     getData(url)
     .then((data) => {
@@ -47,3 +45,5 @@ console.log(id);
    }
    init()
 }
+
+productsFunc()
