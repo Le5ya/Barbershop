@@ -1,4 +1,5 @@
  export const openModal = (modal) => {
+    modal = document.getElementById('auth-modal')
     const layout = document.createElement('div')
     modal.classList.add('d-block')
     layout.classList.add('modal-backdrop')
@@ -7,7 +8,7 @@
     // document.body.insertAdjacentHTML('beforeend', `
     //     <div class="modal-backdrop fade"></div>
     // `)
-    modal.classList.add('d-block')
+    // modal.classList.add('d-block')
 
     setTimeout(() => {
         // const layout = document.querySelector('.modal-backdrop')
