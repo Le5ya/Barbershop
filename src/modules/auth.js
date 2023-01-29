@@ -1,5 +1,5 @@
-import { openModal, closeModal } from "./modals"
 import { getData } from "./api.js"
+import { openModal, closeModal } from "./modals"
 
 
 export const authFunc = () => {
@@ -92,8 +92,6 @@ logoutBtn.addEventListener('click', () => {
     logout()
 })
 
-openCartBtn.addEventListener('click', () => {
-    openModal(cartModal)
-})
+
 checkAuth()
 }
